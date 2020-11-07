@@ -26,7 +26,12 @@
 		* This increases performance because the customer does not have to download the whole object
 		* Example - imagine a CSV in a zip file, with S3 select you can run a SQL expression to extract data from the CSV file without downloading and unzipping the object
 	* **S3 Glacier selecet** - Similar to S3 select, allows customer to run SQL expressions against Glacier objects stored in S3
-	
+
+* **Sharing S3 buckets across accounts** - AWS gives you the ability to share buckets with another account in your organization or a 3rd party via the following methods
+	* Using bucket policies & IAM access - this is restricted to programmatic access only
+	* Using bucket ACLs & IAM access - also restricted to programmatic access only
+	* Using cross-account IAM roles - programmatic & console access
+
 # IAM (Identity and Access Management)
 
 * **AWS Organizataions** - Allows you to consilidate AWS accounts into an AWS Organization which allows centralised billing and management
