@@ -27,3 +27,11 @@
 		* Example - imagine a CSV in a zip file, with S3 select you can run a SQL expression to extract data from the CSV file without downloading and unzipping the object
 	* **S3 Glacier selecet** - Similar to S3 select, allows customer to run SQL expressions against Glacier objects stored in S3
 	
+# IAM (Identity and Access Management)
+
+* **AWS Organizataions** - Allows you to consilidate AWS accounts into an AWS Organization which allows centralised billing and management
+	* Structure is Root account > OU accounts (could be departments such as HR / Finance etc) > AWS accounts
+	* Policies are applied to OUs and is trickled down to all accounts under the OU
+	* **Consolidated billing** - Allows you to consolidate billing from all accounts into one account - remember back to "the more you use the less you pay"
+	
+	* 
