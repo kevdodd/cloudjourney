@@ -49,7 +49,9 @@
 	* Can clear cached objects (or invalid) but the customer will be charged to do so
 	* **Origin** - this is the source data that you are caching at the edge locations
 	* **Signed URL** - allows you to provide restricted access to content for a set period of time.
+		* 1 URL per file
 		* Example: Imagine you have users who subscribe to Netflix, Netflix will share the signed URL with the subscription account which allows access to the content on Netflix
+		* **Signed Cookie** - this is similar to a signed URL with the exception that 1 signed cookie = multiple files
 	
 	
 
