@@ -31,6 +31,24 @@
 	* Using bucket policies & IAM access - this is restricted to programmatic access only
 	* Using bucket ACLs & IAM access - also restricted to programmatic access only
 	* Using cross-account IAM roles - programmatic & console access
+	
+* **Cross region replication** - allows you to replicate to another bucket in another region
+	* versioning must be enabled on both the source and destination for CRR to be enabled
+	* can be replaced to a bucket in the same AWS account or a separate account
+	* this will not replicate objects that exist in the bucket but will replicate objects uploaded thereafter
+* **Transfer acceleration** - Uses AWS' edge locations to improve upload times. Rather than uploading directly to the bucket is is uploaded to an edge location and then transferred to the bucket using AWS' high speed prviate network
+
+* **AWS DataSync** - Service used to sync large amount of data from on-prem datacentre to and from AWS
+	* Datasyc agent needs to be installed source servers
+	* Supports NFS and SMB shares
+	* Replication can be done hourly, weekly or daily
+	
+* **Cloudfront** - AWS content delivery network(CDN) is a distributed system that improves performance by caching data to edge locations located geographically closer to the end user
+	* The end user will connect to the edge location located closest to them and request some content, the edge location then retrieves the content from AWS (if not already cached), the content is then cached for the period of the TTL timer so if another user requests the same data they can source it straight from the edge location
+	* Possible to read OR write data to the edge locations
+	* Can clear cached objects (or invalid) but the customer will be charged to do so
+	
+	
 
 # IAM (Identity and Access Management)
 
