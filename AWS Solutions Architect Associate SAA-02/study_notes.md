@@ -47,6 +47,9 @@
 	* The end user will connect to the edge location located closest to them and request some content, the edge location then retrieves the content from AWS (if not already cached), the content is then cached for the period of the TTL timer so if another user requests the same data they can source it straight from the edge location
 	* Possible to read OR write data to the edge locations
 	* Can clear cached objects (or invalid) but the customer will be charged to do so
+	* **Origin** - this is the source data that you are caching at the edge locations
+	* **Signed URL** - allows you to provide restricted access to content for a set period of time.
+		* Example: Imagine you have users who subscribe to Netflix, Netflix will share the signed URL with the subscription account which allows access to the content on Netflix
 	
 	
 
