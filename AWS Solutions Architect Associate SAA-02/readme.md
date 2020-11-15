@@ -52,8 +52,23 @@
 		* 1 URL per file
 		* Example: Imagine you have users who subscribe to Netflix, Netflix will share the signed URL with the subscription account which allows access to the content on Netflix
 		* **Signed Cookie** - this is similar to a signed URL with the exception that 1 signed cookie = multiple files
+
+* **Snowball** - Device used to transfer large amounts of data and is available as either 50TB or 80TB. Tamper-resistant, 256bit encryption and contains TPM Module.
+	* Data on the snowball is erased by using software in such a way that previous removed data cannot be restored
 	
+* **Snowball Edge** - Similar to Snowball but with the ability of compute power as well as storage. Has 100TB of storage capacity
+	* Can be used offline and connect to on-prem storage systems
 	
+* **Snowmobile** - Allows the customer to transfer upto 100PB of data into AWS. Arrives on a truck!
+
+* **Storage Gateway** - Physical or virtual appliance that will replace your on-premise data to AWS
+	* 3 different variants of Storage Gateway Types
+		* **File Gateway** - Store files in S3 using a NFS/SMB mountpoint. Files are stored directly in S3
+		* **Volume gateway**
+			* **Stored Volumes** - Data is stored on site and presents the volume is presented to servers using iSCSI. Data is asyncronously backed up to S3
+			* **Cached Volumes** - This option allows the customer to use a volume stored in S3 as their primary data store but cache frequently access data locally to achieve low-latency access to data. Volumes are attached to on-premise servers using iSCSI and have capacity of upto 32TB
+		* **Tape gateway** - Customer can replace their existing on-premise tape infrastructure with virtual tapes provided by the Tape gateway. Stores virtual tapes in S3
+		
 
 # IAM (Identity and Access Management)
 
