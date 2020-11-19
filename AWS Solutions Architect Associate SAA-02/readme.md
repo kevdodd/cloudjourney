@@ -68,7 +68,14 @@
 			* **Stored Volumes** - Data is stored on site and presents the volume is presented to servers using iSCSI. Data is asyncronously backed up to S3
 			* **Cached Volumes** - This option allows the customer to use a volume stored in S3 as their primary data store but cache frequently access data locally to achieve low-latency access to data. Volumes are attached to on-premise servers using iSCSI and have capacity of upto 32TB
 		* **Tape gateway** - Customer can replace their existing on-premise tape infrastructure with virtual tapes provided by the Tape gateway. Stores virtual tapes in S3
-		
+
+* **Athena** - Interactive query service which allows you to query data stored in S3 using SQL statements
+	* Serverless
+	* Works directly with data stored in S3
+	
+* **Macie** - Service that uses AI to recognize if PII data is stored in S3, can also analyze CloudTrail logs
+	* Includes dashboards, reports and alerting
+	* Can be used in PCI-DSS compliance
 
 # IAM (Identity and Access Management)
 
