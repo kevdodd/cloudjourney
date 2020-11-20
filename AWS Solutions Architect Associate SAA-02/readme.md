@@ -83,5 +83,24 @@
 	* Structure is Root account > OU accounts (could be departments such as HR / Finance etc) > AWS accounts
 	* Policies are applied to OUs and is trickled down to all accounts under the OU
 	* **Consolidated billing** - Allows you to consolidate billing from all accounts into one account - remember back to "the more you use the less you pay"
-	
-	* 
+
+
+# EC2
+
+* **Pricing Models**
+	* **On-Demand** - Allows the customer to pay a fixed-rate per hour/second withi no no commitment
+		* Good for applications with short-time, spikey or unpredictable workloads that cannot be interrupted
+		* Also good for newly developed applications that are being tested
+	* **Reserved** - Provides the ability for the customer to reserve capactiy for a fixed amount of time of either 1 or 3 years, significantly cheaper than on-demand
+		*  **Types of Reserved Instances**
+			* **Standard Reserved Instances** - offer up to 75% off the total price, the more you pay upfront or the longer the contract term the cheaper it will be
+			* **Convertible Reserved Instances** - offer up to 54% off, allows the customer to increase the resources of the RI (RAM, CPU etc) but does not allow the resources to be lowered
+			* **Scheduled Reserved Instances** - Customers can reserved EC2 instances which run scheduled workloads within a set time frame. Workloads must be predictible
+		* Useful for applications that have a steady state or predictable workloads
+		* Customers can make upfront payments to reduce the total cost
+		
+	* **Spot instances** - Allows customer to bit for unused EC2 capacity for very very cheap prices however if the capacity is needed then the EC2 instance is shutdown within minutes
+	* **Dedicated hosts** - Reserve a physical EC2 server dedicated for customers use only, can be beneficial when needing transfer server-bound software licenses
+		* Can be reserved on-demand (hourly)
+		* Can purchase a reservation and get up to 70% discount
+		* Good for regulatory requirements which don't support multi-tenant configurations
