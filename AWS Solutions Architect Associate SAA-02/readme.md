@@ -88,19 +88,61 @@
 # EC2
 
 * **Pricing Models**
-	* **On-Demand** - Allows the customer to pay a fixed-rate per hour/second withi no no commitment
+	* **On-Demand** - Allows the customer to pay a fixed-rate per hour/second with no commitment
 		* Good for applications with short-time, spikey or unpredictable workloads that cannot be interrupted
 		* Also good for newly developed applications that are being tested
 	* **Reserved** - Provides the ability for the customer to reserve capactiy for a fixed amount of time of either 1 or 3 years, significantly cheaper than on-demand
 		*  **Types of Reserved Instances**
-			* **Standard Reserved Instances** - offer up to 75% off the total price, the more you pay upfront or the longer the contract term the cheaper it will be
+			* **Standard Reserved Instances** - offer up to 75% off the total price, the more you pay upfront or the longer the contract term then the cheaper it will be
 			* **Convertible Reserved Instances** - offer up to 54% off, allows the customer to increase the resources of the RI (RAM, CPU etc) but does not allow the resources to be lowered
 			* **Scheduled Reserved Instances** - Customers can reserved EC2 instances which run scheduled workloads within a set time frame. Workloads must be predictible
-		* Useful for applications that have a steady state or predictable workloads
-		* Customers can make upfront payments to reduce the total cost
 		
-	* **Spot instances** - Allows customer to bit for unused EC2 capacity for very very cheap prices however if the capacity is needed then the EC2 instance is shutdown within minutes
+	* **Spot instances** - Allows customer to bid for unused EC2 capacity for very very cheap prices however if the capacity is needed then the EC2 instance is shutdown within minutes
 	* **Dedicated hosts** - Reserve a physical EC2 server dedicated for customers use only, can be beneficial when needing transfer server-bound software licenses
 		* Can be reserved on-demand (hourly)
 		* Can purchase a reservation and get up to 70% discount
 		* Good for regulatory requirements which don't support multi-tenant configurations
+		
+* **EC2 Misc**
+	* Termination protection is off by default - prevents you from accidently terminating your EC2 instance
+	* The root volume of an EC2 instance will terminal by default, EBS volumes must be manually terminated
+	* EBS root volumes on default AMIs can be encrypted off the bat. Also can use a third party tool to encrypt EBS volumes
+	
+* **Security Groups**
+	* Act as a firewall for EC2 instances
+	* Statefull firewall (if we have a rule to allow HTTP inbound then it will permit outband connections for these)
+	* More than 1 Security Group can be applied to an EC2 instance
+	* All inbound traffic is blocked by default
+* **EBS**
+	* Elastic Block Storage - provides virtual hard disk for your EC2 instances that uses block storage
+	* EBS Volumes are automatically replicated wihtin the same AZ
+	* Types of EBS Volumes
+		* **General Purpose (SSD)**
+			* Balances price and performance, good for most work loads
+			* Max IOPS is 16,000
+			* Capacity between 1GB - 16TB
+			* API name - gp2
+		* **Provisioned IOPS (SSD)**
+			* Highest performant EBS volume, designed for mission critical workloads such as databases
+			* Max IOPS is 64,000
+			* Capacity between 4GB - 16TB
+			* API name is io1
+		* **Throughput Optimized HDD**
+			* Designed for frequently accessed data with a requirement of high throughput
+			* Low cost HDD
+			* Most suitable for big data and data warehouses
+			* Max IOPS is 500
+			* Capacity between 500GB - 16TB
+			* API name is st1
+		* **Cold HDD**
+			* Low cost HDD designed for less frequently accessed data such as File Servers
+			* Capacity between 500GB and 16TB
+			* API name is sc1
+			* Maximum IOPS is 250
+		* **EBS Magnetic**
+			* Previous generation HDD
+			* Suitable for non-frequently access data
+			* API name - Standard
+			* Capacity between 1GB - 1TB
+			* Max IOPS is 40-200
+		
