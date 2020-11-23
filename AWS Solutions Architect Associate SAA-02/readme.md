@@ -145,4 +145,6 @@
 			* API name - Standard
 			* Capacity between 1GB - 1TB
 			* Max IOPS is 40-200
+	* EBS snapshots are automatically stored in the same region where as the EBS volume
+	* 
 		
