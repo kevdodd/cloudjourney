@@ -111,7 +111,7 @@
 		* All data is lost when the EC2 instance is rebooted, terminated or if the underlying physical disk becomes faulty
 		* Underlying storage is physically attached to the host computer
 		* Instance store storage can only be created when the EC2 instance is initially created, cannot be configured thereafter
-	* Spot EC2 Fleet - a collection of spot instances and optionally on-demand instances. EC2 Spot Fleets attempt to fulfil the specified EC2 capacity
+	* Spot Fleet - a collection of Spot instances with the option of on-demand instances. Aims to create EC2 instances to meet target capacity
 	
 * **Security Groups**
 	* Act as a firewall for EC2 instances
