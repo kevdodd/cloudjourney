@@ -97,7 +97,7 @@
 			* **Convertible Reserved Instances** - offer up to 54% off, allows the customer to increase the resources of the RI (RAM, CPU etc) but does not allow the resources to be lowered
 			* **Scheduled Reserved Instances** - Customers can reserved EC2 instances which run scheduled workloads within a set time frame. Workloads must be predictible
 		
-	* **Spot instances** - Allows customer to bid for unused EC2 capacity for very very cheap prices however if the capacity is needed then the EC2 instance is shutdown within minutes
+	* **Spot instances** - Allows customer to bid for unused EC2 capacity for very very cheap prices however if the capacity is needed then the EC2 instance is shutdown within minutes. Spot block can be used to block the instance from being terminated between 1 - 6 hours.
 	* **Dedicated hosts** - Reserve a physical EC2 server dedicated for customers use only, can be beneficial when needing transfer server-bound software licenses
 		* Can be reserved on-demand (hourly)
 		* Can purchase a reservation and get up to 70% discount
@@ -107,6 +107,11 @@
 	* Termination protection is off by default - prevents you from accidently terminating your EC2 instance
 	* The root volume of an EC2 instance will terminal by default, EBS volumes must be manually terminated
 	* EBS root volumes on default AMIs can be encrypted off the bat. Also can use a third party tool to encrypt EBS volumes
+	* Instance store provides temporary block storage for EC2 instances
+		* All data is lost when the EC2 instance is rebooted, terminated or if the underlying physical disk becomes faulty
+		* Underlying storage is physically attached to the host computer
+		* Instance store storage can only be created when the EC2 instance is initially created, cannot be configured thereafter
+	* Spot EC2 Fleet - a collection of spot instances and optionally on-demand instances. EC2 Spot Fleets attempt to fulfil the specified EC2 capacity
 	
 * **Security Groups**
 	* Act as a firewall for EC2 instances
@@ -145,6 +150,15 @@
 			* API name - Standard
 			* Capacity between 1GB - 1TB
 			* Max IOPS is 40-200
-	* EBS snapshots are automatically stored in the same region where as the EBS volume
-	* 
-		
+	* Volume types / capacity can be changed on the fly
+	* Snapshots are incremental
+	* Snapshots are automatically created in the same AZ as the EC2 instance its attached to
+	* To move a EC2 volume to another AZ take a snapshot of it then create an AMI using the snapshot and use the AMI to spin up a new EC2 instance in the other AZ
+	
+* **EC2 NIC**
+	* **Elastic Network Interface (ENI)** - A standard virtual NIC that is low-cost. Good for a standard network or management network
+	* **Enhance Networking (EN)** - uses SR-IOV (allows a single PCIe device such as a NIC to appear as multiple) to enhance network I/O performance, reduce inter-instance latency improve bandwidth and PPS (packets per/s). There is no additional charge
+		* Elastic Network Adapter - ENA should be chosen for enhanced networking option which allows network speeds of upto 100Gbps
+	* **Elasic Fabric Adapter (EFA)** - Networking device that can be attached to EC2 instances for High-Performance Computing (HPC) which allows much lower latency and higher throughput. EFA OS Bypass function allows EFA devices to communicate directly with each other and bypass the OS kernal, this reduces latency
+	
+		* 
