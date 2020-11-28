@@ -162,5 +162,17 @@
 	* **Enhance Networking (EN)** - uses SR-IOV (allows a single PCIe device such as a NIC to appear as multiple) to enhance network I/O performance, reduce inter-instance latency improve bandwidth and PPS (packets per/s). There is no additional charge
 		* Elastic Network Adapter - ENA should be chosen for enhanced networking option which allows network speeds of upto 100Gbps
 	* **Elasic Fabric Adapter (EFA)** - Networking device that can be attached to EC2 instances for High-Performance Computing (HPC) which allows much lower latency and higher throughput. EFA OS Bypass function allows EFA devices to communicate directly with each other and bypass the OS kernal, this reduces latency
+
+* **Cloudwatch** - Service that monitors performance of AWS services such as EC2, Route53, Load Balancers etc
+	* Can monitor metrics such as CPU, RAM, Network, Disk, Statuses
+	* Cloudwatch monitors events every 5 minutes by default, possible to change this monitoring interval to 1 minute (known as Cloudwatch detailed monitoring in console)
+	* Dashboards can be created in Cloudwatch
+	* Possible to create alarms and configure email notification
+	* Cloudwatch logs can be created and aggregated into a single location
 	
+* **AWS CLI Access** - Access AWS CLI either by using access key id & secret access key or by assigning an IAM role which is the preferred way as its more secure
+
+* **EC2 Instance Metadata** - access http://169.254.169.254/meta-data to access information about the EC2 instance such as IPv4, hostname, MAC, AMI-ID etc
+
+
 		* 
