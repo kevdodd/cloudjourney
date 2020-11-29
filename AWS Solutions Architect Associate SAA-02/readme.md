@@ -174,5 +174,16 @@
 
 * **EC2 Instance Metadata** - access http://169.254.169.254/meta-data to access information about the EC2 instance such as IPv4, hostname, MAC, AMI-ID etc
 
+* **Elastic File System (EFS)** - Scalable, durable file system that is compatible with Linux only
+	* Automatically replicates data to 3 AZs
+	* Automatically scales capacity to meet demand
+	* AWS fully manages EFS
+	* Save costs by moving data to IA tier automatically after x days
+	* Accessible via VPC, cross-VPC and from on-prem servers using AWS Direct Connect or VPN
 
-		* 
+* **AWS FSx for Windows** - Managed file system for Windows devices that uses the SMB protocol
+	* Integrates with AD
+* **AWS FSx for Lustre** - Fully managed file system for compute-intensive workloads.
+	* Use cases would be machine learning, high performance computing or media data processing
+	* Million IOP per second and sub milisecond latency
+	
