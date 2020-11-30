@@ -186,4 +186,16 @@
 * **AWS FSx for Lustre** - Fully managed file system for compute-intensive workloads.
 	* Use cases would be machine learning, high performance computing or media data processing
 	* Million IOP per second and sub milisecond latency
+
+* **EC2 Placement Group** - Allows you to influence where your EC2 instance is located to minimize the impact of underlying hardware failures
+	* **Cluster** - places your EC2 instances close together within an AZ to increase network throughput and reduce latency. placed on same rack, high risk. Not all EC2 types are compatible
+	* **Partition** - EC2 instances are logically placed into a group and this method ensures that each logical group does not share underlying hardware with another group
+	* **Spread** - EC2 instances are spread across different hardware racks in different AZs, risk is reduced but limited to 7 instances per AZ per placement group
+	
+* **ParallelCluster** - Service that allows you to deploy and manage HPC clusters
+	* Text file is used to model and provision all resources required for HPC cluster
+	* Possible to automate VPC, subnets, instance type etc
+	
+
+
 	
